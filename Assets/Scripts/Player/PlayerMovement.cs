@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     [Range(1f, 5f)]
     public float SprintDuration;
 
+    [Range(0.1f, 1f)]
+    [SerializeField] float sprintRefillMultiplier;
+
     [Range(0.1f, 2f)]
     [SerializeField] float normalHeight;
 
@@ -129,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
                 staminaDelayTimer.StartTimer();
 
             isSprinting = false;
-            SprintStamina += (!isSprintingInputActive && refillStamina) ? Time.deltaTime : 0f;
+            SprintStamina += (!isSprintingInputActive && refillStamina) ? Time.deltaTime * sprintRefillMultiplier : 0f;
         }
 
         SprintStamina = Mathf.Clamp(SprintStamina, 0f, SprintDuration);

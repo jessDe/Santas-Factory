@@ -187,6 +187,7 @@ MonoBehaviour:
   sprintSpeed: 12
   sneakSpeed: 4
   SprintDuration: 3
+  sprintRefillMultiplier: 0.8
   normalHeight: 1.8
   sneakHeight: 1
   staminaDelayTimer: {fileID: 8467066189889650511}
