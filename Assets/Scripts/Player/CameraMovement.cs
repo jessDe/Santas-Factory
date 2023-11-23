@@ -34,7 +34,10 @@ public class CameraMovement : MonoBehaviour
             Debug.LogError("CameraMovement has no Input Actions assigned.");
 
         if (camTransform is null)
-            Debug.LogError("No Camera Transform assigned.");
+        {
+            Debug.LogWarning("NO CamTransform found. Using Cam.Main");
+            camTransform = Camera.main.transform;
+        }
     }
 
     #endregion
