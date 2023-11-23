@@ -25,6 +25,8 @@ public class TextUpdater : MonoBehaviour
     {
         finalText = text.text;
         text.text = string.Empty;
+
+        Debug.Log(finalText);
     }
 
     void Update()
