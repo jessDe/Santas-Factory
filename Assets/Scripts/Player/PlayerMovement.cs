@@ -132,12 +132,14 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction.Enable();
         sprintAction.Enable();
+        sneakAction.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.Disable();
         sprintAction.Disable();
+        sneakAction.Disable();
     }
     #endregion
 }
