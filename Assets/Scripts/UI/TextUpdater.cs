@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 
 public class TextUpdater : MonoBehaviour
 {
+    [Range(0.01f, 1f)]
+    [SerializeField] float delayTime;
+
     public TextMeshProUGUI text;
     public AudioSource audioSource;
     public string finalText;
@@ -16,37 +19,36 @@ public class TextUpdater : MonoBehaviour
 
     public bool whileplaying = false;
 
-    
     private float timer = 0;
-    // Update is called once per frame
+
+    private void Start()
+    {
+        finalText = text.text;
+        text.text = string.Empty;
+    }
+
     void Update()
     {
-        if (whileplaying)
+        if (!whileplaying) return;
+     
+        timer += Time.deltaTime;
+        if (timer >= delayTime)
         {
-            timer += Time.deltaTime;
-            if (timer >= 1f)
+            timer = 0;
+            if (state < finalText.Length)
             {
-                timer = 0;
-                if (state < finalText.Length)
-                {
-                    state++;
-                    audioSource.pitch = Random.Range(0.3f, 1f);
-                    audioSource.volume = Random.Range(0.7f, 1f);
-                    audioSource.Play();
-                    string newText = finalText.Substring(0, state);
-                    text.text = newText;
-
-                }
-                else
-                {
-                    this.transform.parent.parent.gameObject.SetActive(false);
-                }
+                state++;
+                audioSource.pitch = Random.Range(0.3f, 1f);
+                audioSource.volume = Random.Range(0.7f, 1f);
+                audioSource.Play();
+                string newText = finalText.Substring(0, state);
+                text.text = newText;
+            }
+            else
+            {
+                this.transform.parent.parent.gameObject.SetActive(false);
             }
         }
-        
-        //Get First Character of string with the length of State
-        
-        
     }
     
 }
