@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     [Range(1f, 35f)]
     [SerializeField] float sprintSpeed;
 
+    [Range(1f, 35f)]
+    [SerializeField] float sneakSpeed;
+
     [Space]
 
     [Tooltip("In Seconds")]
@@ -28,12 +31,19 @@ public class PlayerMovement : MonoBehaviour
     // Input Actions
     InputAction moveAction;
     InputAction sprintAction;
+    InputAction sneakAction;
 
     // Inputs
     Vector2 inputVec;
 
     bool isSprintingInputActive;
     bool isSprinting;
+
+    bool isSneakingInputActive;
+    bool isSneaking;
+
+    float speed;
+
     public float SprintStamina { get; private set; }
 
     #region Mono Initialization
@@ -41,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction = inputActions.FindActionMap("movement").FindAction("move");
         sprintAction = inputActions.FindActionMap("movement").FindAction("sprint");
+        sneakAction = inputActions.FindActionMap("movement").FindAction("sneak");
     }
 
     private void Start()
@@ -58,8 +69,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         ReadInput();
-        HandleMovement();
         HandleSprinting();
+        HandleSneaking();
+        HandleMovement();
     }
     #endregion
 
@@ -68,12 +80,20 @@ public class PlayerMovement : MonoBehaviour
     {
         inputVec = moveAction.ReadValue<Vector2>();
         isSprintingInputActive = sprintAction.ReadValue<float>() > 0.5f;
+        isSneakingInputActive = sneakAction.ReadValue<float>() > 0.5f;
     }
 
     private void HandleMovement()
     {
-        float horizontalSpeed = inputVec.x * (isSprinting ? sprintSpeed : walkSpeed);
-        float verticalSpeed = inputVec.y * (isSprinting ? sprintSpeed : walkSpeed);
+        if (isSprinting)
+            speed = sprintSpeed;
+        else if (isSneaking)
+            speed = sneakSpeed;
+        else
+            speed = walkSpeed;
+
+        float horizontalSpeed = inputVec.x * speed;
+        float verticalSpeed = inputVec.y * speed;
 
         Vector3 speedVec = new(horizontalSpeed, 0f, verticalSpeed);
         speedVec = transform.rotation * speedVec;
@@ -95,6 +115,15 @@ public class PlayerMovement : MonoBehaviour
         }
 
         SprintStamina = Mathf.Clamp(SprintStamina, 0f, SprintDuration);
+    }
+
+    private void HandleSneaking()
+    {
+        if (isSneakingInputActive)
+        {
+            isSneaking = true;
+            Debug.Log("Sneaking");
+        }
     }
     #endregion
 
