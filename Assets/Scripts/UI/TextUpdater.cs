@@ -20,8 +20,6 @@ public class TextUpdater : MonoBehaviour
 
     private float timer = 0;
     
-    private string chardb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ, /.?#+-üäöÜÄÖß!:;()[]{}=0123456789";
-
     private void Start()
     {
         finalText = text.text;
@@ -47,10 +45,9 @@ public class TextUpdater : MonoBehaviour
                 
                 string newText = finalText.Substring(0, state);
                 //Check if the last character is a anphabetical character or a comma or space
-                if (chardb.Contains(newText[newText.Length - 1].ToString()))
+                if (newText[newText.Length - 1] != '\n')
                 {
-                    audioSource.Play();
-                    AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+                    audioSource.PlayOneShot(audioSource.clip);
                 }
                     
                 text.text = newText;
@@ -71,5 +68,4 @@ public class TextUpdater : MonoBehaviour
             }
         }
     }
-    
 }
