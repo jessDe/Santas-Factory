@@ -1233,11 +1233,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6308989693381855521, guid: 38c7dfc0d3683da4e8175d7a5681f76e,
-        type: 3}
-      propertyPath: sprintRefillMultiplier
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 7929850567570851919, guid: 38c7dfc0d3683da4e8175d7a5681f76e,
         type: 3}
       propertyPath: cameraGameObject

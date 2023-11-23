@@ -122,6 +122,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isSprintingInputActive && SprintStamina > 0f)
         {
+            if (!isSprinting)
+                staminaDelayTimer.RestartTimer();
+
             isSprinting = true;
             refillStamina = false;
             SprintStamina -= Time.deltaTime;

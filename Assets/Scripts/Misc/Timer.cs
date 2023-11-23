@@ -11,9 +11,17 @@ public class Timer : MonoBehaviour
     [Range(1f, 10f)]
     [SerializeField] float delayTime;
 
+    Coroutine timerCoroutine;
+
     public void StartTimer(float? delayInSeconds = null)
     {
-        StartCoroutine(StartTime(delayInSeconds ?? delayTime));
+        timerCoroutine = StartCoroutine(StartTime(delayInSeconds ?? delayTime));
+    }
+
+    public void RestartTimer()
+    {
+        if (timerCoroutine != null)
+            StopCoroutine(timerCoroutine);
     }
 
     private IEnumerator StartTime(float delay)

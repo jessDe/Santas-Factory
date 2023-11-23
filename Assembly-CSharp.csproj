@@ -60,6 +60,9 @@
     <Analyzer Include="C:\Users\Teilnehmer\Software\Unity\Editor\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\TextUpdater.cs" />
+    <Compile Include="Assets\Scripts\Akt1\Akt1Manager.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Chore.cs" />
     <Compile Include="Assets\Scripts\Empty.cs" />
     <Compile Include="Assets\Scripts\Misc\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
