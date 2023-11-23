@@ -1,23 +1,30 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.hauntedpsx.render-pipelines.psx.Runtime", "com.hauntedpsx.render-pipelines.psx.Runtime.csproj", "{3228d27b-fe7e-f0f7-05b2-eceaaa00638b}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.hauntedpsx.render-pipelines.psx.Runtime", "com.hauntedpsx.render-pipelines.psx.Runtime.csproj", "{7BD22832-7EFE-F7F0-05B2-ECEAAA00638B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.hauntedpsx.render-pipelines.psx.Editor", "com.hauntedpsx.render-pipelines.psx.Editor.csproj", "{7ad5d0b2-396f-1a0d-f584-e2b39ccb0b3b}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.hauntedpsx.render-pipelines.psx.Editor", "com.hauntedpsx.render-pipelines.psx.Editor.csproj", "{B2D0D57A-6F39-0D1A-F584-E2B39CCB0B3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9499f896-702d-3850-a03e-bd7be3f1accb}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{96F89994-2D70-5038-A03E-BD7BE3F1ACCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3228d27b-fe7e-f0f7-05b2-eceaaa00638b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3228d27b-fe7e-f0f7-05b2-eceaaa00638b}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ad5d0b2-396f-1a0d-f584-e2b39ccb0b3b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ad5d0b2-396f-1a0d-f584-e2b39ccb0b3b}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9499f896-702d-3850-a03e-bd7be3f1accb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9499f896-702d-3850-a03e-bd7be3f1accb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD22832-7EFE-F7F0-05B2-ECEAAA00638B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD22832-7EFE-F7F0-05B2-ECEAAA00638B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD22832-7EFE-F7F0-05B2-ECEAAA00638B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD22832-7EFE-F7F0-05B2-ECEAAA00638B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D0D57A-6F39-0D1A-F584-E2B39CCB0B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D0D57A-6F39-0D1A-F584-E2B39CCB0B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D0D57A-6F39-0D1A-F584-E2B39CCB0B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D0D57A-6F39-0D1A-F584-E2B39CCB0B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F89994-2D70-5038-A03E-BD7BE3F1ACCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F89994-2D70-5038-A03E-BD7BE3F1ACCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F89994-2D70-5038-A03E-BD7BE3F1ACCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F89994-2D70-5038-A03E-BD7BE3F1ACCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
