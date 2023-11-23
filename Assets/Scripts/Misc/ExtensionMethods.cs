@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public static class VectorExtensions
 {
@@ -84,4 +87,10 @@ public static class FloatExtensions
 {
     public static float Map(this float value, float fromMin, float fromMax, float toMin, float toMax) =>
         (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
+}
+
+public static class StringExtensions
+{
+    public static string ToLiteral(this string value) =>
+        Regex.Escape(value);
 }
