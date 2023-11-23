@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
 
     [HideInInspector] public GameObject player;
 
-    [SerializeField] Slider staminaSlider;
+    [SerializeField] Slider staminaSliderLeft;
+    [SerializeField] Slider staminaSliderRight;
 
     #region Mono Initialization
     private void Awake()
@@ -35,7 +36,8 @@ public class UIManager : MonoBehaviour
     {
         var playerMovement = player.GetComponent<PlayerMovement>();
 
-        staminaSlider.value = playerMovement.SprintStamina.Map(0f, playerMovement.SprintDuration, 0f, 1f);
+        staminaSliderLeft.value = playerMovement.SprintStamina.Map(0f, playerMovement.SprintDuration, 0f, 1f);
+        staminaSliderRight.value = playerMovement.SprintStamina.Map(0f, playerMovement.SprintDuration, 0f, 1f);
     }
     #endregion
 }

@@ -26,11 +26,18 @@ public class PlayerMovement : MonoBehaviour
     [Range(1f, 5f)]
     public float SprintDuration;
 
+    [Range(0.1f, 1f)]
+    [SerializeField] float sprintRefillMultiplier;
+
     [Range(0.1f, 2f)]
     [SerializeField] float normalHeight;
 
     [Range(0.1f, 2f)]
     [SerializeField] float sneakHeight;
+
+    [Space]
+
+    [SerializeField] Timer staminaDelayTimer;
 
     CharacterController controller;
 
@@ -44,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool isSprintingInputActive;
     bool isSprinting;
+    bool refillStamina;
 
     bool isSneakingInputActive;
     bool isSneaking;
@@ -69,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         SprintStamina = SprintDuration;
+
+        staminaDelayTimer.OnTimerTrigger += (e, a) => refillStamina = true;
     }
     #endregion
 
@@ -113,12 +123,16 @@ public class PlayerMovement : MonoBehaviour
         if (isSprintingInputActive && SprintStamina > 0f)
         {
             isSprinting = true;
+            refillStamina = false;
             SprintStamina -= Time.deltaTime;
         }
         else
         {
+            if (isSprinting)
+                staminaDelayTimer.StartTimer();
+
             isSprinting = false;
-            SprintStamina += (!isSprintingInputActive) ? Time.deltaTime : 0f;
+            SprintStamina += (!isSprintingInputActive && refillStamina) ? Time.deltaTime * sprintRefillMultiplier : 0f;
         }
 
         SprintStamina = Mathf.Clamp(SprintStamina, 0f, SprintDuration);
