@@ -26,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
     [Range(1f, 5f)]
     public float SprintDuration;
 
+    [Range(0.1f, 2f)]
+    [SerializeField] float normalHeight;
+
+    [Range(0.1f, 2f)]
+    [SerializeField] float sneakHeight;
+
     CharacterController controller;
 
     // Input Actions
@@ -42,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     bool isSneakingInputActive;
     bool isSneaking;
 
+    float height;
     float speed;
 
     public float SprintStamina { get; private set; }
@@ -122,8 +129,15 @@ public class PlayerMovement : MonoBehaviour
         if (isSneakingInputActive)
         {
             isSneaking = true;
-            Debug.Log("Sneaking");
+            height = sneakHeight;
+        } else
+        {
+            isSneaking = false;
+            height = normalHeight;
         }
+
+        controller.height = height;
+        GetComponent<CapsuleCollider>().height = height;
     }
     #endregion
 

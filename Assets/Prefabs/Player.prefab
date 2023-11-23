@@ -139,7 +139,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &3717748906383169235
@@ -184,7 +184,10 @@ MonoBehaviour:
     type: 3}
   walkSpeed: 8
   sprintSpeed: 12
+  sneakSpeed: 4
   SprintDuration: 3
+  normalHeight: 1.8
+  sneakHeight: 1
 --- !u!114 &7929850567570851919
 MonoBehaviour:
   m_ObjectHideFlags: 0
