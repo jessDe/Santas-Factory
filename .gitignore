@@ -9,3 +9,4 @@ UserSettings/Layouts/default-2022.dwlt
 *.sln
 com.hauntedpsx.render-pipelines.psx.Editor.csproj
 com.hauntedpsx.render-pipelines.psx.Runtime.csproj
+Assembly-CSharp.csproj
