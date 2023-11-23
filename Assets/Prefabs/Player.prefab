@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7456884143224147788}
   - component: {fileID: 3717748906383169235}
   - component: {fileID: 6308989693381855521}
+  - component: {fileID: 8467066189889650511}
   - component: {fileID: 7929850567570851919}
   m_Layer: 0
   m_Name: Player
@@ -188,6 +189,20 @@ MonoBehaviour:
   SprintDuration: 3
   normalHeight: 1.8
   sneakHeight: 1
+  staminaDelayTimer: {fileID: 8467066189889650511}
+--- !u!114 &8467066189889650511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322417461987918620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3590293bc371cf6408d3f7a477c8f8a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1
 --- !u!114 &7929850567570851919
 MonoBehaviour:
   m_ObjectHideFlags: 0
