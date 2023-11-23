@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "com.hauntedpsx.render-pipelines.psx": {
-      "version": "file:C:/Users/Teilnehmer/Downloads/com.hauntedpsx.render-pipelines.psx/com.hauntedpsx.render-pipelines.psx",
+      "version": "file:com.hauntedpsx.render-pipelines.psx",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {
         "com.unity.render-pipelines.core": "7.3.1"
       }

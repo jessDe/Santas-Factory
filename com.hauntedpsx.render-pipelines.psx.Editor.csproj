@@ -45,27 +45,27 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\TerrainGrassVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CathodeRayTubeVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXMaterialUtils.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\AccumulationMotionBlurVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\QualityOverrideVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\PrecisionVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\TonemapperVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\FogVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\LightingVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Material\BaseShaderGUI.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CameraVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXLitShaderGUI.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\SkyVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CompressionVolumeEditor.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXTerrainShaderGUI.cs" />
-     <Compile Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\RenderPipeline\PSXAssetFactory.cs" />
-     <Folder Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Material" />
-     <Folder Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\RenderPipeline" />
-     <Folder Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor" />
-     <None Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\com.hauntedpsx.render-pipelines.psx.Editor.asmdef" />
-     <Folder Include="C:\Users\Teilnehmer\Downloads\com.hauntedpsx.render-pipelines.psx\com.hauntedpsx.render-pipelines.psx\Editor\Volume" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\TerrainGrassVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CathodeRayTubeVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXMaterialUtils.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\AccumulationMotionBlurVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\QualityOverrideVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\PrecisionVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\TonemapperVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\FogVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\LightingVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Material\BaseShaderGUI.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CameraVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXLitShaderGUI.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\SkyVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume\CompressionVolumeEditor.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Material\PSXTerrainShaderGUI.cs" />
+     <Compile Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\RenderPipeline\PSXAssetFactory.cs" />
+     <Folder Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Material" />
+     <Folder Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\RenderPipeline" />
+     <Folder Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor" />
+     <None Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\com.hauntedpsx.render-pipelines.psx.Editor.asmdef" />
+     <Folder Include="Packages\com.hauntedpsx.render-pipelines.psx\Editor\Volume" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
