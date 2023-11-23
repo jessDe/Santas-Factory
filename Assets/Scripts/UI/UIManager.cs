@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
 
     [HideInInspector] public GameObject player;
 
-    [SerializeField] Slider healthSlider;
     [SerializeField] Slider staminaSlider;
 
     #region Mono Initialization
@@ -34,10 +33,8 @@ public class UIManager : MonoBehaviour
     #region Custom Functions
     private void UpdatePlayerUI()
     {
-        var playerHealth = player.GetComponent<PlayerHealth>();
         var playerMovement = player.GetComponent<PlayerMovement>();
 
-        healthSlider.value = playerHealth.Health.Map(0f, playerHealth.MaxHealth, 0f, 1f);
         staminaSlider.value = playerMovement.SprintStamina.Map(0f, playerMovement.SprintDuration, 0f, 1f);
     }
     #endregion
