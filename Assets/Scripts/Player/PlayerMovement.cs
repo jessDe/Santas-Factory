@@ -154,7 +154,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.height = height;
-        GetComponent<CapsuleCollider>().height = height;
     }
     #endregion
 
