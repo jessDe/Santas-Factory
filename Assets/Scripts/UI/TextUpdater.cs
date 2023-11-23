@@ -13,13 +13,14 @@ public class TextUpdater : MonoBehaviour
 
     public TextMeshProUGUI text;
     public AudioSource audioSource;
-    public string finalText;
-    [HideInInspector]
-    public int state = 0;
+    private string finalText;
+    private int state = 0;
 
     public bool whileplaying = false;
 
     private float timer = 0;
+    
+    private string chardb = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ, /.?#+-üäöÜÄÖß!:;()[]{}=0123456789";
 
     private void Start()
     {
@@ -42,13 +43,31 @@ public class TextUpdater : MonoBehaviour
                 state++;
                 audioSource.pitch = Random.Range(0.3f, 1f);
                 audioSource.volume = Random.Range(0.7f, 1f);
-                audioSource.Play();
+                
+                
                 string newText = finalText.Substring(0, state);
+                //Check if the last character is a anphabetical character or a comma or space
+                if (chardb.Contains(newText[newText.Length - 1].ToString()))
+                {
+                    audioSource.Play();
+                    AudioSource.PlayClipAtPoint(audioSource.clip, Camera.main.transform.position);
+                }
+                    
                 text.text = newText;
+                
             }
             else
             {
-                this.transform.parent.parent.gameObject.SetActive(false);
+                if (state < finalText.Length + 5)
+                {
+                    state++;
+                }
+                else
+                {
+                    this.transform.parent.parent.gameObject.SetActive(false);
+                }
+                GameObject.Find("Akt 1 Manager").GetComponent<Akt1Manager>().introtextdone = true;
+                
             }
         }
     }
