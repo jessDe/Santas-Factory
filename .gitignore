@@ -9,3 +9,5 @@ UserSettings/
 *.vsidx
 .vs/
 *.csproj
+.vsconfig
+UserSettings/EditorUserSettings.asset

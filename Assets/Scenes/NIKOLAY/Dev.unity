@@ -1238,13 +1238,7 @@ PrefabInstance:
       propertyPath: cameraGameObject
       value: 
       objectReference: {fileID: 798215257}
-    - target: {fileID: 8467066189889650511, guid: 38c7dfc0d3683da4e8175d7a5681f76e,
-        type: 3}
-      propertyPath: delayTime
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7456884143224147788, guid: 38c7dfc0d3683da4e8175d7a5681f76e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
