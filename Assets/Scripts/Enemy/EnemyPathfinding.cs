@@ -37,6 +37,8 @@ public class EnemyPathfinding : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (patrolPath is null) return;
+
         float dist = Vector3.Distance(transform.position, patrolPath[pathIndex].position);
         Debug.Log(dist);
 
