@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -35,10 +37,10 @@ public static class GameObjectExtensions
     public static T GetOrAdd<T>(this GameObject value) where T : Component =>
         value.GetComponent<T>() ?? value.AddComponent<T>();
 
-    public static T OrNull<T>(this T value) where T : Object => value ? value : null;
+    public static T OrNull<T>(this T value) where T : UnityEngine.Object => value ? value : null;
 
     public static void DestroyChildren(this GameObject value) =>
-        value.PerformActionOnChildren(e => Object.Destroy(e));
+        value.PerformActionOnChildren(e => UnityEngine.Object.Destroy(e));
 
     public static void EnableChildren(this GameObject value) =>
         value.PerformActionOnChildren(e => e.SetActive(true));
@@ -68,7 +70,7 @@ public static class TransformExtensions
     }
 
     public static void DestroyChildren(this Transform value) =>
-        value.PerformActionOnChildren(e => Object.Destroy(e.gameObject));
+        value.PerformActionOnChildren(e => UnityEngine.Object.Destroy(e.gameObject));
 
     public static void EnableChildren(this Transform value) =>
         value.PerformActionOnChildren(e => e.gameObject.SetActive(true)); 
@@ -93,4 +95,14 @@ public static class StringExtensions
 {
     public static string ToLiteral(this string value) =>
         Regex.Escape(value);
+}
+
+public static class IEnumerableExtensions
+{
+    public static void Each<T>(this IEnumerable<T> value, Action<T, int> action)
+    {
+        int i = 0;
+        foreach (var item in value)
+            action(item, i++);
+    }
 }
