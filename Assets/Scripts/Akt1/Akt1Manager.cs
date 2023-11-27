@@ -12,6 +12,8 @@ public class Akt1Manager : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
+        Player.GetComponent<PlayerMovement>().enabled = false;
+        Player.GetComponent<CameraMovement>().enabled = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -24,6 +26,12 @@ public class Akt1Manager : MonoBehaviour
     public void IntroDone()
     {
         introtextdone = true;
-        Player.SetActive(true);
+        Player.GetComponent<PlayerMovement>().enabled = true;
+        Player.GetComponent<CameraMovement>().enabled = true;
+    }
+    
+    public void Akt1Done()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }

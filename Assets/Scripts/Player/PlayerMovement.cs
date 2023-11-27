@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     float height;
     float speed;
+    
 
     public float SprintStamina { get; private set; }
 
