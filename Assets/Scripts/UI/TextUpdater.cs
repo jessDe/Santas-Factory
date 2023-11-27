@@ -63,7 +63,7 @@ public class TextUpdater : MonoBehaviour
                 {
                     this.transform.parent.parent.gameObject.SetActive(false);
                 }
-                GameObject.Find("Akt 1 Manager").GetComponent<Akt1Manager>().introtextdone = true;
+                GameObject.Find("Akt 1 Manager").GetComponent<Akt1Manager>().IntroDone();
                 
             }
         }
