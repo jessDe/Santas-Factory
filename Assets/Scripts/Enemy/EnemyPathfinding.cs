@@ -9,7 +9,13 @@ public class EnemyPathfinding : MonoBehaviour
     [SerializeField] Transform enemyPathHolder;
     [Range(0.1f, 1f)]
     [SerializeField] float pathVicinity;
+
+    [Tooltip("Waittime between moving on to next point")]
+    [Range(0f, 5f)]
+    [SerializeField] float pointCooldown;
+
     [SerializeField] bool spawnOnPath;
+    [SerializeField] bool onPatrol;
 
     Transform[] patrolPath;
     NavMeshAgent navAgent;
@@ -30,7 +36,7 @@ public class EnemyPathfinding : MonoBehaviour
         foreach (Transform t in enemyPathHolder)
             patrolPath[i++] = t;
 
-        navAgent.SetDestination(patrolPath[0].position);
+        if (onPatrol) navAgent.SetDestination(patrolPath[0].position);
 
         if (spawnOnPath)
             transform.position = new Vector3(patrolPath[0].position.x, GetComponent<CharacterController>().height, patrolPath[0].position.z);
@@ -38,17 +44,19 @@ public class EnemyPathfinding : MonoBehaviour
     private void FixedUpdate()
     {
         if (patrolPath is null) return;
+        if (onPatrol is false) return;
 
         float dist = Vector3.Distance(transform.position, patrolPath[pathIndex].position);
         if (dist <= pathVicinity)
         {
             pathIndex = (pathIndex + 1) % pathSize;
-            SetFollowPoint();
+            StartCoroutine(SetFollowPoint());
         }
     }
 
-    private void SetFollowPoint()
+    private IEnumerator SetFollowPoint()
     {
+        yield return new WaitForSeconds(pointCooldown);
         navAgent.SetDestination(patrolPath[pathIndex].position);
     }
 }
