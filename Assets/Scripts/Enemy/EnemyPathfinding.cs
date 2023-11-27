@@ -40,8 +40,6 @@ public class EnemyPathfinding : MonoBehaviour
         if (patrolPath is null) return;
 
         float dist = Vector3.Distance(transform.position, patrolPath[pathIndex].position);
-        Debug.Log(dist);
-
         if (dist <= pathVicinity)
         {
             pathIndex = (pathIndex + 1) % pathSize;

@@ -66,14 +66,14 @@ public static class TransformExtensions
 
     public static IEnumerable<Transform> Children(this Transform value)
     {
-        foreach(Transform child in value) yield return child;
+        foreach (Transform child in value) yield return child;
     }
 
     public static void DestroyChildren(this Transform value) =>
         value.PerformActionOnChildren(e => UnityEngine.Object.Destroy(e.gameObject));
 
     public static void EnableChildren(this Transform value) =>
-        value.PerformActionOnChildren(e => e.gameObject.SetActive(true)); 
+        value.PerformActionOnChildren(e => e.gameObject.SetActive(true));
 
     public static void DisableChildren(this Transform value) =>
         value.PerformActionOnChildren(e => e.gameObject.SetActive(false));
